@@ -23,6 +23,7 @@ public class SimulationManager implements Runnable{
     public int maxClients=0;
     public int totalServiceTime=0;
     public float averageWaitingTime=0;
+    private int processedClients=0;
     public SimulationManager(int timeLimit, int minArrivalTime, int maxArrivalTime, int maxProcessingTime, int minProcessingTime, int numberOfServers, int numberOfClients, SelectionPolicy selectionPolicy) {
         this.timeLimit = timeLimit;
         this.maxArrivalTime=maxArrivalTime;
@@ -55,7 +56,7 @@ public class SimulationManager implements Runnable{
        }
 
        public FileWriter createFile() throws IOException {
-           File file = new File("log3.txt");
+           File file = new File("log2.txt");
        file.createNewFile();
        FileWriter fw = new FileWriter(file);
 
@@ -69,35 +70,6 @@ public class SimulationManager implements Runnable{
         }
         return totalClients;
     }
-
-    /*
-    public int computeWaitingTimeForClient (model.Task t){
-        int waitingTime=0;
-        model.Server serverWithTask;
-        for (model.Server s: scheduler.getServers()) {
-            for (model.Task t1 : s.getTasksQ()) {
-                if (t1.getID() == t.getID()) {
-                    serverWithTask = new model.Server(s.getQIndex());
-                }
-            }
-        }
-
-            for (model.Task t1: serverWithTask.getTasksQ())
-            if (t1.getArrivalTime() <t.getArrivalTime()){
-                waitingTime=waitingTime+t1.getProcessingTime();
-            }
-
-        return waitingTime;
-    }
-
-
-    public float computeWaitingTime(){
-        for (Task t:generatedTasks){
-            totalWaitingTime = totalWaitingTime + scheduler.computeWaitingTimeForClient(t);
-        }
-        return (float) totalWaitingTime/numberOfClients;
-
-    }*/
    @Override
    public void run(){
        try {
@@ -132,6 +104,7 @@ public class SimulationManager implements Runnable{
                     }
                     if (t.getArrivalTime() == currentTime) {
                         scheduler.dispatchTask(t);
+                        processedClients++;
                         totalServiceTime = totalServiceTime + t.getProcessingTime();
                     }
                     if (getNbOfClientsAtTimeT()>maxClients){

@@ -44,29 +44,6 @@ public class Scheduler {
         return waitingTime;
     }
 
-
-
-   /*
-    public int computeWaitingTimeForClient (Task t){
-        int waitingTime=0;
-        Server serverWithTask = servers.get(0);
-        for (Server s: servers) {  // find server
-            for (Task t1 : s.getTasksQ()) {
-                if (t1.getID() == t.getID()) {
-                    serverWithTask = s;
-                }
-            }
-        }
-
-        for (Task t1: serverWithTask.getTasksQ())
-            if (t1.getArrivalTime() <t.getArrivalTime()){
-                waitingTime=waitingTime+t1.getProcessingTime();
-            }
-
-        return waitingTime;
-    }
-
-    */
     public void changeStrategy (SelectionPolicy policy){
         if (policy == SelectionPolicy.SHORTEST_QUEUE){
             strategy = new ConcreteStrategyQueue();

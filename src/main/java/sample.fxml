@@ -39,14 +39,9 @@
       <TextField id="tfArrTimeMax" fx:id="tfArrTimeMax" layoutX="299.0" layoutY="114.0" prefHeight="26.0" prefWidth="47.0" />
       <TextField id="tfServiceTimeMin" fx:id="tfServiceTimeMin" layoutX="208.0" layoutY="151.0" prefHeight="26.0" prefWidth="47.0" />
       <TextField id="tfServiceTimeMax" fx:id="tfServiceTimeMax" layoutX="299.0" layoutY="151.0" prefHeight="26.0" prefWidth="47.0" />
-      <Button id="buttonStart" fx:id="buttonStart" layoutX="56.0" layoutY="248.0" mnemonicParsing="false" onAction="#initialiseSimulation" prefHeight="30.0" prefWidth="122.0" text="Start">
+      <Button id="buttonStart" fx:id="buttonStart" layoutX="139.0" layoutY="249.0" mnemonicParsing="false" onAction="#initializeSimulation" prefHeight="48.0" prefWidth="147.0" text="Start">
          <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button id="buttonStop" fx:id="buttonStop" layoutX="228.0" layoutY="248.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Stop">
-         <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Button>
       <Label layoutX="24.0" layoutY="191.0" prefHeight="20.0" prefWidth="95.0" text="Strategy:">
@@ -55,5 +50,10 @@
          </font>
       </Label>
       <TextField id="tfStrategy" fx:id="tfStrategy" layoutX="202.0" layoutY="189.0" />
+      <Label layoutX="25.0" layoutY="211.0" prefHeight="18.0" prefWidth="209.0" text="SHORTEST_QUEUE/SHORTEST_TIME" textFill="#ab0e0e">
+         <font>
+            <Font name="System Italic" size="10.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

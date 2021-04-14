@@ -16,10 +16,7 @@ public class Controller {
     public TextField tfServiceTimeMax;
     public TextField tfTime;
     public Button buttonStart;
-    public Button buttonStop;
     public TextField tfStrategy;
-
-    private UserInterface userInterface;
     private int nrOfClients;
     private int nrOfQueues;
     private int simulationDuration;
@@ -135,7 +132,7 @@ public class Controller {
 
     }
 
-    public void initialiseSimulation (){
+    public void initializeSimulation (){
         getInputData();
         SimulationManager simulationManager = new SimulationManager(simulationDuration,minArrivalTime,maxArrivalTime,maxServiceTime,minServiceTime,nrOfQueues,nrOfClients,selectionPolicy);
         Thread t = new Thread(simulationManager);
