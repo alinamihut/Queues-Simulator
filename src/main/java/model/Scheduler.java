@@ -3,11 +3,12 @@ package model;
 import java.util.ArrayList;
 
 public class Scheduler {
+
     private ArrayList<Server> servers = new ArrayList<>();
     private int maxNrServers;
     private int maxTasksPerServer;
     private Strategy strategy;
-    int waitingTime;
+    public static int waitingTime;
 
     public Scheduler (int maxNrServers, int maxTasksPerServer){
         for (int i=0;i<maxNrServers;i++){
@@ -36,15 +37,16 @@ public class Scheduler {
 
         return str;
     }
-  /*
-    public int computeWaitingTime (){
-        for (model.Server s: servers) {
-          waitingTime = waitingTime + s.getWaitingPeriod().intValue();
-        }
+    public static void computeWaitingTimeForServerS(Server s){
+        waitingTime=waitingTime+ s.getWaitingPeriod().intValue();
+    }
+    public int getWaitingTime(){
         return waitingTime;
     }
 
-   */
+
+
+   /*
     public int computeWaitingTimeForClient (Task t){
         int waitingTime=0;
         Server serverWithTask = servers.get(0);
@@ -63,6 +65,8 @@ public class Scheduler {
 
         return waitingTime;
     }
+
+    */
     public void changeStrategy (SelectionPolicy policy){
         if (policy == SelectionPolicy.SHORTEST_QUEUE){
             strategy = new ConcreteStrategyQueue();

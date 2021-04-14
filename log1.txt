@@ -1,0 +1,306 @@
+START OF SIMULATION 
+TIME: 0
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 1
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 2
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 3
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 4
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 5
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 6
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 7
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 8
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 9
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 10
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 11
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 12
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 13
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 14
+Waiting clients: (1, 15, 3)(3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 15
+Waiting clients: (3, 16, 2)(4, 19, 3)(2, 27, 2)
+
+ Queue1: (1, 15, 2)
+ Queue2: empty
+TIME: 16
+Waiting clients: (4, 19, 3)(2, 27, 2)
+
+ Queue1: (1, 15, 1)
+ Queue2: (3, 16, 1)
+TIME: 17
+Waiting clients: (4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 18
+Waiting clients: (4, 19, 3)(2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 19
+Waiting clients: (2, 27, 2)
+
+ Queue1: (4, 19, 3)
+ Queue2: empty
+TIME: 20
+Waiting clients: (2, 27, 2)
+
+ Queue1: (4, 19, 1)
+ Queue2: empty
+TIME: 21
+Waiting clients: (2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 22
+Waiting clients: (2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 23
+Waiting clients: (2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 24
+Waiting clients: (2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 25
+Waiting clients: (2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 26
+Waiting clients: (2, 27, 2)
+
+ Queue1: empty
+ Queue2: empty
+TIME: 27
+Waiting clients: 
+
+ Queue1: (2, 27, 1)
+ Queue2: empty
+TIME: 28
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 29
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 30
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 31
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 32
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 33
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 34
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 35
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 36
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 37
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 38
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 39
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 40
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 41
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 42
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 43
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 44
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 45
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 46
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 47
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 48
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 49
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 50
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 51
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 52
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 53
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 54
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 55
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 56
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 57
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 58
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+TIME: 59
+Waiting clients: 
+
+ Queue1: empty
+ Queue2: empty
+------------------------------------------ 
+Average service time:2.25 
+Average waiting time:2.5 
+Peak Hour: 16 with 2 clients in the queues 
+END OF SIMULATION

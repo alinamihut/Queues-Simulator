@@ -22,7 +22,6 @@ public class SimulationManager implements Runnable{
     public int peakHour=0;
     public int maxClients=0;
     public int totalServiceTime=0;
-    public int totalWaitingTime=0;
     public float averageWaitingTime=0;
     public SimulationManager(int timeLimit, int minArrivalTime, int maxArrivalTime, int maxProcessingTime, int minProcessingTime, int numberOfServers, int numberOfClients, SelectionPolicy selectionPolicy) {
         this.timeLimit = timeLimit;
@@ -56,7 +55,7 @@ public class SimulationManager implements Runnable{
        }
 
        public FileWriter createFile() throws IOException {
-           File file = new File("log.txt");
+           File file = new File("log3.txt");
        file.createNewFile();
        FileWriter fw = new FileWriter(file);
 
@@ -90,7 +89,7 @@ public class SimulationManager implements Runnable{
 
         return waitingTime;
     }
-    */
+
 
     public float computeWaitingTime(){
         for (Task t:generatedTasks){
@@ -98,7 +97,7 @@ public class SimulationManager implements Runnable{
         }
         return (float) totalWaitingTime/numberOfClients;
 
-    }
+    }*/
    @Override
    public void run(){
        try {
@@ -139,7 +138,7 @@ public class SimulationManager implements Runnable{
                         maxClients=getNbOfClientsAtTimeT();
                         peakHour = currentTime;
                     }
-                   averageWaitingTime = computeWaitingTime();
+                   averageWaitingTime = (float) Scheduler.waitingTime/numberOfClients;
                 }
             }
             try {
@@ -166,10 +165,9 @@ public class SimulationManager implements Runnable{
            fw.write("------------------------------------------ \n");
            fw.write("Average service time:" + (float)totalServiceTime/ numberOfClients);
            fw.write(" \n");
-           //averageWaitingTime = (float) totalWaitingTime/numberOfClients;
            fw.write("Average waiting time:" + averageWaitingTime);
            fw.write(" \n");
-           fw.write("Peak Hour:" + peakHour + "with " + maxClients + " clients in the queues");
+           fw.write("Peak Hour: " + peakHour + " with " + maxClients + " clients in the queues");
            fw.write(" \n");
            fw.write("END OF SIMULATION");
            fw.flush();

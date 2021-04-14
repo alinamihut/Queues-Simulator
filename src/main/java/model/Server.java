@@ -62,6 +62,7 @@ public class Server implements Runnable{
     public void addTask(Task newTask) {
     tasksQ.add(newTask);
     waitingPeriod.addAndGet(newTask.getProcessingTime());
+
     }
 
     public Task[] getClients() {

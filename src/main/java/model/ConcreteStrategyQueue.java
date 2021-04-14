@@ -15,10 +15,8 @@ public class ConcreteStrategyQueue implements Strategy {
                 shortestQueueServer=s;
         }
         shortestQueueServer.addTask(t);
+        Scheduler.computeWaitingTimeForServerS(shortestQueueServer);
         System.out.println("Client" + t.getID() + "sent to queue" + shortestQueueServer.getQIndex());
     }
 
-    public int getWaitingTime (Server s){
-        return s.getWaitingPeriod().intValue();
-    }
 }
