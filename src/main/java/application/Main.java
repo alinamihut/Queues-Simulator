@@ -16,7 +16,7 @@ public class Main extends Application {
         URL url= new File("src/main/java/sample.fxml").toURI().toURL();
         Parent root= FXMLLoader.load(url);
         primaryStage.setTitle("Queue simulator");
-        primaryStage.setScene(new Scene(root, 500, 400));
+        primaryStage.setScene(new Scene(root, 800, 400));
         primaryStage.show();
     }
 

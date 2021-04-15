@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="405.0" prefWidth="472.0" style="-fx-background-color: #dfbdbd;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane prefHeight="408.0" prefWidth="763.0" style="-fx-background-color: #dfbdbd;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
       <Label layoutX="25.0" layoutY="14.0" prefHeight="20.0" prefWidth="147.0" text="Number of clients:">
          <font>
@@ -39,7 +39,7 @@
       <TextField id="tfArrTimeMax" fx:id="tfArrTimeMax" layoutX="299.0" layoutY="114.0" prefHeight="26.0" prefWidth="47.0" />
       <TextField id="tfServiceTimeMin" fx:id="tfServiceTimeMin" layoutX="208.0" layoutY="151.0" prefHeight="26.0" prefWidth="47.0" />
       <TextField id="tfServiceTimeMax" fx:id="tfServiceTimeMax" layoutX="299.0" layoutY="151.0" prefHeight="26.0" prefWidth="47.0" />
-      <Button id="buttonStart" fx:id="buttonStart" layoutX="139.0" layoutY="249.0" mnemonicParsing="false" onAction="#initializeSimulation" prefHeight="48.0" prefWidth="147.0" text="Start">
+      <Button id="buttonStart" fx:id="buttonStart" layoutX="139.0" layoutY="290.0" mnemonicParsing="false" onAction="#initializeSimulation" prefHeight="48.0" prefWidth="147.0" text="Start">
          <font>
             <Font size="18.0" />
          </font>
@@ -53,6 +53,12 @@
       <Label layoutX="25.0" layoutY="211.0" prefHeight="18.0" prefWidth="209.0" text="SHORTEST_QUEUE/SHORTEST_TIME" textFill="#ab0e0e">
          <font>
             <Font name="System Italic" size="10.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtLog" layoutX="366.0" layoutY="34.0" prefHeight="343.0" prefWidth="387.0" />
+      <Label layoutX="368.0" layoutY="16.0" prefHeight="18.0" prefWidth="131.0" text="Log of events:">
+         <font>
+            <Font size="14.0" />
          </font>
       </Label>
    </children>

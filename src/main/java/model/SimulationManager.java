@@ -1,5 +1,8 @@
 package model;
 
+import javafx.application.Platform;
+import javafx.scene.control.TextArea;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,7 +27,8 @@ public class SimulationManager implements Runnable{
     public int totalServiceTime=0;
     public float averageWaitingTime=0;
     private int processedClients=0;
-    public SimulationManager(int timeLimit, int minArrivalTime, int maxArrivalTime, int maxProcessingTime, int minProcessingTime, int numberOfServers, int numberOfClients, SelectionPolicy selectionPolicy) {
+    public TextArea txtLog;
+    public SimulationManager(int timeLimit, int minArrivalTime, int maxArrivalTime, int maxProcessingTime, int minProcessingTime, int numberOfServers, int numberOfClients, SelectionPolicy selectionPolicy, TextArea txtLog) {
         this.timeLimit = timeLimit;
         this.maxArrivalTime=maxArrivalTime;
         this.minArrivalTime=minArrivalTime;
@@ -34,13 +38,16 @@ public class SimulationManager implements Runnable{
         this.numberOfClients = numberOfClients;
         this.selectionPolicy = selectionPolicy;
         generateNRandomTasks();
+        this.txtLog=txtLog;
         scheduler = new Scheduler(numberOfServers,numberOfClients);
         scheduler.changeStrategy(selectionPolicy);
     }
 
 
     public static Comparator<Task> taskComparator = Comparator.comparingInt(Task::getArrivalTime);
-   private void generateNRandomTasks(){
+
+
+    private void generateNRandomTasks(){
        for (int i=0;i<numberOfClients;i++) {
            int arrivalTime = (int) ((Math.random() * (maxArrivalTime - minArrivalTime)) + minArrivalTime);
            int processingTime = (int) ((Math.random() * (maxProcessingTime - minProcessingTime)) + minProcessingTime);
@@ -70,11 +77,15 @@ public class SimulationManager implements Runnable{
         }
         return totalClients;
     }
+    public void appendText(String string) {
+        txtLog.appendText(string);
+    }
    @Override
    public void run(){
        try {
            fw=createFile();
            fw.write("START OF SIMULATION \n");
+           Platform.runLater(()->txtLog.appendText("START OF SIMULATION"));
        } catch (IOException e) {
            e.printStackTrace();
        }
@@ -82,13 +93,17 @@ public class SimulationManager implements Runnable{
         while (currentTime< timeLimit){
             try {
                 fw.write("TIME: " + currentTime);
-                System.out.println("TIME: " + currentTime);
+                System.out.println(" \n TIME: " + currentTime);
                 fw.write("\n");
+                int finalCurrentTime = currentTime;
+                Platform.runLater(()->txtLog.appendText(" \n TIME: " + finalCurrentTime + "\n"));
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
             try {
                 fw.write("Waiting clients: ");
+                Platform.runLater(()->txtLog.appendText("Waiting clients: "));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -97,6 +112,7 @@ public class SimulationManager implements Runnable{
                     if (t.getArrivalTime() >currentTime) {
                         try {
                             fw.write(t.toString());
+                            Platform.runLater(()->txtLog.appendText(t.toString()));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -118,6 +134,7 @@ public class SimulationManager implements Runnable{
                 fw.write("\n");
                 fw.write(scheduler.toString());
                 fw.write("\n");
+                Platform.runLater(()->txtLog.appendText("\n" + scheduler.toString() + "\n"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -145,6 +162,15 @@ public class SimulationManager implements Runnable{
            fw.write("END OF SIMULATION");
            fw.flush();
            fw.close();
+           Platform.runLater(()->txtLog.appendText("\nEND OF SIMULATION\n"));
+           Platform.runLater(()->txtLog.appendText("----------------------------- \n"));
+           Platform.runLater(()->txtLog.appendText("Average service time:" + (float)totalServiceTime/ numberOfClients));
+           Platform.runLater(()->txtLog.appendText("\n"));
+           Platform.runLater(()->txtLog.appendText("Average waiting time:" + averageWaitingTime));
+           Platform.runLater(()->txtLog.appendText("\n"));
+           Platform.runLater(()->txtLog.appendText("Peak Hour: " + peakHour + " with " + maxClients + " clients in the queues"));
+           Platform.runLater(()->txtLog.appendText("\n"));
+
        } catch (IOException e) {
            e.printStackTrace();
        }

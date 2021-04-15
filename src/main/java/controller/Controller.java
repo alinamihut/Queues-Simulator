@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.SelectionPolicy;
 import model.SimulationManager;
@@ -14,9 +15,9 @@ public class Controller {
     public TextField tfSimulationInterval;
     public TextField tfServiceTimeMin;
     public TextField tfServiceTimeMax;
-    public TextField tfTime;
     public Button buttonStart;
     public TextField tfStrategy;
+    public TextArea txtLog;
     private int nrOfClients;
     private int nrOfQueues;
     private int simulationDuration;
@@ -82,10 +83,7 @@ public class Controller {
         this.maxServiceTime = maxServiceTime;
     }
 
-    public TextField getTfTime() {
-        return tfTime;
-    }
-
+    public TextArea getTxtLog(){return txtLog;}
     public void getInputData() {
         try {
             nrOfClients = Integer.parseInt(tfNumberClients.getText());
@@ -116,6 +114,7 @@ public class Controller {
             }
         } catch (Exception e) {
             UserInterface.showAlertForInvalidData();
+
         }
         if (!strategy.equals("SHORTEST_QUEUE") && !strategy.equals("SHORTEST_TIME")){
             UserInterface.showAlertForInvalidData();
@@ -134,7 +133,7 @@ public class Controller {
 
     public void initializeSimulation (){
         getInputData();
-        SimulationManager simulationManager = new SimulationManager(simulationDuration,minArrivalTime,maxArrivalTime,maxServiceTime,minServiceTime,nrOfQueues,nrOfClients,selectionPolicy);
+        SimulationManager simulationManager = new SimulationManager(simulationDuration,minArrivalTime,maxArrivalTime,maxServiceTime,minServiceTime,nrOfQueues,nrOfClients,selectionPolicy, txtLog);
         Thread t = new Thread(simulationManager);
         t.start();
 

@@ -1,11 +1,6 @@
 package view;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class UserInterface {
     public static void showAlertForInvalidData() {
@@ -14,7 +9,4 @@ public class UserInterface {
         alert.setHeaderText("Please enter valid data!");
         alert.show();
     }
-
-
-
 }
